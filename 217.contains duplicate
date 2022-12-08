@@ -1,0 +1,29 @@
+# approached for this problem has been recorded
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        # with O(1) time and space complexity
+        # there is an one line approach for items
+        return len(nums)!=len(set(nums))
+        ---------------------------------------------------------------
+        '''
+        # this uses O(n) memory and O(n) time
+        # one of the approach to use a set which consumes extra space
+        hs=set()
+
+        for n in nums:
+            if n in hs:
+                return True
+            else:
+                hs.add(n)
+        return False            
+     ------------------------------------------------------------
+     # this uses O(n) memory and O(n) time
+        # another approach is to create a dictionary consuming space
+        hm={}
+
+        for i in range(len(nums)):
+            hm[nums[i]]=hm.get(nums[i],0)+1
+        for n,c in hm.items():
+            if c!=1:
+                return True
+        return False '''     
