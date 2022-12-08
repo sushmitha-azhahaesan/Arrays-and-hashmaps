@@ -1,3 +1,15 @@
+Description: 
+
+Brute force :O(n2) as time complexity and O(1) as space complexity
+In bf 2 loops i and j will be used . Take  i and compare with all . If repeated then pass true else false
+
+sorting method: this has O(nlogn) as time and O(1) as space
+i and i+1 are compared , if same then return true else false
+
+hash map menthod: this has O(n) as time and space complexity
+a hash map is created and values are counted then checked for more than 1 , if exist return true else false
+-------------------------------------------------------------------------------------------------------
+
 # approached for this problem has been recorded
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
