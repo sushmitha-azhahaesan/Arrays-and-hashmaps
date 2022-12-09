@@ -24,4 +24,17 @@ class Solution:
             last=mx
             mx=max(mx,arr[i])
             arr[i]=last
+        return arr 
+        -----------------------------------------------------------
+        class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        mx=-1
+        # the first approach would be a greedy one
+        # this takes O(n) as time complexity and O(1) as space complexity
+        # traversing the array from right to left and getting the maximum from last
+        for i in range(len(arr)-1,-1,-1):
+            # this refers to in place swapping (where the updation doesn't happen immediately,just the variable is pointed in memory)
+            # when mx is assigned to arr[i], the updated mx will not get assigned , the previous calculated mx is assigned
+            mx, arr[i] = max(mx,arr[i]), mx
         return arr    
+
