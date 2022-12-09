@@ -1,0 +1,27 @@
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        maxi=0
+        result=[]
+        # the first approach would be a brute force approach
+        # takes O(n2) as time complexity and O(n) as space complexity . so time limit exceeded
+        for i in range(len(arr)-1):
+            for j in range(i+1,len(arr)):
+                maxi=max(maxi,arr[j])
+            result.append(maxi)
+            maxi=0
+
+        result.append(-1)    
+        return result
+        
+        -------------------------------------------------------
+        class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        mx=-1
+        # the first approach would be a greedy one
+        # this takes O(n) as time complexity and O(1) as space complexity
+        # traversing the array from right to left and getting the maximum from last
+        for i in range(len(arr)-1,-1,-1):
+            last=mx
+            mx=max(mx,arr[i])
+            arr[i]=last
+        return arr    
