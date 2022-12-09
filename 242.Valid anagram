@@ -1,0 +1,27 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        # approach 1 is to check whethwe the anagram is same after sorting
+        # time complexity will be O(nlogn) since sorting is used
+        # O(1) as space complexity
+        # return sorted(s)==sorted(t)
+------------------------------------------------------------------------------
+        # The next approach is to compare the hashmap
+        # time complexity is O(n) and space complexity is O(n)
+        # hm1={}
+        # hm2={}
+        # if len(s)!=len(t):
+        #     return False
+
+
+        # for i in s:
+        #     hm1[i]=hm1.get(i,0)+1
+        # for j in t:
+        #     hm2[j]=hm2.get(j,0)+1    
+
+        # for i in hm1:
+        #     if hm1[i]!=hm2.get(i):
+        #         return False
+        # return True 
+-------------------------------------------------------------------------------
+        # this is one liner
+        return collections.Counter(s)==collections.Counter(t)
